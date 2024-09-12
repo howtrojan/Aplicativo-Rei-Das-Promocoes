@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "78458814168",
+    "project_id": "promotions-8f6b9",
+    "storage_bucket": "promotions-8f6b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78458814168:android:211035beb576513f45a1ad",
+        "android_client_info": {
+          "package_name": "com.myapp.reidaspromocoes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Ks9t9JiKOyhDzBxcuTa1TlpAf6JhJrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
