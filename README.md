@@ -38,7 +38,7 @@ Os dados das promoções são raspados usando Python. O processo de raspagem col
 - Visualização de Promoções: As promoções são exibidas na página inicial com opções de pesquisa e filtragem por data.
 - Atualização de Dados: Arraste para baixo para atualizar a lista de promoções.
 
-##Link Para Download
+## Link Para Download
 - Você pode baixar o [Rei Das Promoções](https://play.google.com/store/apps/details?id=com.myapp.reidaspromocoes) na Google Play Store aqui.
 
 ## Contato
