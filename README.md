@@ -2,6 +2,15 @@
 
 **Promotions-app** é um aplicativo desenvolvido em Flutter que ajuda os usuários a encontrar e visualizar promoções e cupons do dia. O aplicativo funciona como uma ferramenta para indexar e exibir ofertas de diversas fontes, facilitando a busca por boas oportunidades. Não se trata de uma loja online, mas sim de um indexador de promoções.
 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f2989f8-ea56-4544-98b6-f5f56f657305" width="150" />
+  <img src="https://github.com/user-attachments/assets/88479d99-3cdf-47c3-b6ff-f0165ca5e21e" width="150" />
+  <img src="https://github.com/user-attachments/assets/2fb4eb80-4466-44a5-ba4f-6fa7da9cf169" width="150" />
+  <img src="https://github.com/user-attachments/assets/66855fcb-fa8e-42a9-b696-859e9452734a" width="150" />
+  <img src="https://github.com/user-attachments/assets/2eb1fd6b-e2a3-4ee2-a9e9-59504ea9377d" width="150" />
+</p>
+
 ## Recursos
 
 - **Interface Amigável:** Design intuitivo com uma barra de busca para encontrar promoções rapidamente.
