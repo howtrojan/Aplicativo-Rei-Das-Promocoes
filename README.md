@@ -1,6 +1,6 @@
-# Promotions-app
+# Rei das Promoções
 
-**Promotions-app** é um aplicativo desenvolvido em Flutter que ajuda os usuários a encontrar e visualizar promoções e cupons do dia. O aplicativo funciona como uma ferramenta para indexar e exibir ofertas de diversas fontes, facilitando a busca por boas oportunidades. Não se trata de uma loja online, mas sim de um indexador de promoções.
+**Rei das Promoções** é um aplicativo desenvolvido em Flutter que ajuda os usuários a encontrar e visualizar promoções e cupons do dia. O aplicativo funciona como uma ferramenta para indexar e exibir ofertas de diversas fontes, facilitando a busca por boas oportunidades. Não se trata de uma loja online, mas sim de um indexador de promoções.
 
 
 <p align="center">
