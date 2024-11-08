@@ -1,17 +1,13 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:reidaspromocoes/admob/intersticial.dart';
-import 'package:reidaspromocoes/provider/like_provider.dart';
-import 'package:reidaspromocoes/services/routes.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'config/theme_config.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:reidaspromocoes/screen/splash_screen_intro.dart';
+import 'package:reidaspromocoes/services/initializer.dart';
+import 'package:reidaspromocoes/widgets/app_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp()); 
+  await dotenv.load();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -27,28 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _initialization = _initializeServices();
-  }
-
-  Future<void> _initializeServices() async {
-    await Firebase.initializeApp();
-    await initializeOneSignal();
-    await MobileAds.instance.initialize();
-
-    final InterstitialAdManager interstitialAdManager = InterstitialAdManager();
-    interstitialAdManager.initialize();
-  }
-
-  Future<void> initializeOneSignal() async {
-    OneSignal.initialize("36edbd8b-a967-4f9d-bbdb-390da7c4f96d");
-    OneSignal.LiveActivities.setupDefault();   
-    OneSignal.Notifications.clearAll();
-    OneSignal.User.pushSubscription.addObserver((state) {
-      print(OneSignal.User.pushSubscription.optedIn);
-      print(OneSignal.User.pushSubscription.id);
-      print(OneSignal.User.pushSubscription.token);
-      print(state.current.jsonRepresentation());
-    });
+    _initialization = initializeServices();
   }
 
   @override
@@ -57,12 +32,8 @@ class _MyAppState extends State<MyApp> {
       future: _initialization,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const MaterialApp(
-            home: Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
-            ),
+          return MaterialApp(
+            home: SplashScreenIntro(),
           );
         } else if (snapshot.hasError) {
           return const MaterialApp(
@@ -74,25 +45,7 @@ class _MyAppState extends State<MyApp> {
           );
         }
 
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (_) => LikeProvider()),
-          ],
-          child: MaterialApp(
-            title: 'Rei das Promoções',
-            theme: buildThemeData(),
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [
-              Locale('pt', ''),
-            ],
-            initialRoute: '/',
-            routes: appRoutes,
-          ),
-        );
+        return const AppWidget();
       },
     );
   }

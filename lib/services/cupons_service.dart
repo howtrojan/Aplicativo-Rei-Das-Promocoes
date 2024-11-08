@@ -1,9 +1,10 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reidaspromocoes/model/cupons_model.dart';
 
 class CouponService {
   final DatabaseReference _databaseReference =
-      FirebaseDatabase.instance.ref('coupons');
+      FirebaseDatabase.instance.ref(dotenv.get('BD_CUPONS'),);
 
   // Método para buscar todos os cupons
   Future<List<Coupon>> fetchCoupons() async {

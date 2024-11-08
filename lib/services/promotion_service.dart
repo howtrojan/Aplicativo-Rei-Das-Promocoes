@@ -1,8 +1,9 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../model/promotion_model.dart';
 
 class PromocaoService {
-  final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref('promotions');
+  final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref(dotenv.get('BD_PROMOTIONS'));
 
   Future<List<Promotion>> fetchPromocoes() async {
     DataSnapshot snapshot = await _databaseReference.get();

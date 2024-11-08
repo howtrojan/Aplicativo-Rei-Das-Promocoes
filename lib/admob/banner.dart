@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class BannerAdManager {
@@ -9,7 +10,7 @@ class BannerAdManager {
     // Definir IDs de dispositivos de teste
     RequestConfiguration requestConfiguration = RequestConfiguration(
       testDeviceIds: [
-        'CF9725A744004B62CCF52E78036C17F4'
+        dotenv.get('TESTE_DEVICE_ID'),
       ], // Substitua pelo ID do dispositivo de teste
     );
     MobileAds.instance.updateRequestConfiguration(requestConfiguration);
@@ -17,7 +18,7 @@ class BannerAdManager {
     _bannerAd = BannerAd(
       size: AdSize.banner,
       adUnitId:
-          'ca-app-pub-4805454721398055/8492940056', // Substitua pelo seu ID de unidade de anúncio
+          dotenv.get('BANNER_ID'), // Substitua pelo seu ID de unidade de anúncio
       request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (ad) {
